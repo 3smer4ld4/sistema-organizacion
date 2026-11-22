@@ -40,7 +40,7 @@ El proyecto permite registrar, administrar y organizar tareas de manera sencilla
 ### 1. Clonar el repositorio
 
 ```bash
-git clone 
+git clone https://github.com/3smer4ld4/sistema-organizacion
 ```
 
 ### 2. Entrar en la carpeta
