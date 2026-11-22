@@ -1,0 +1,426 @@
+
+/*CONFIGURACIÓN GENERAL */
+
+:root {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #25243a;
+    background: #f5f5fa;
+
+    --color-primary: #7164d8;
+    --color-primary-hover: #0beedb;
+    --color-background: #f5f5fa;
+    --color-white: #ffffff;
+    --color-text: #25243a;
+    --color-muted: #85849a;
+    --color-border: #e9e8f0;
+    --color-success: #279b72;
+    --color-danger: #dc5555;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--color-background);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* CONTENEDOR PRINCIPAL*/
+
+.contenedor {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 35px 0;
+}
+
+/*ENCABEZADO */
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.encabezado h1 {
+    font-size: 28px;
+    color: var(--color-text);
+}
+
+.encabezado p {
+    margin-top: 5px;
+    color: var(--color-muted);
+}
+
+/*ESTADÍSTICAS*/
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.tarjeta-estadistica {
+    background: var(--color-white);
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
+}
+
+.tarjeta-estadistica p {
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+.tarjeta-estadistica h2 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+/* FORMULARIO*/
+
+.panel {
+    background: var(--color-white);
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
+    margin-bottom: 30px;
+}
+
+.panel h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    outline: none;
+    background: #fff;
+    color: var(--color-text);
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+    border-color: var(--color-primary);
+}
+
+.campo textarea {
+    min-height: 95px;
+    resize: vertical;
+}
+
+/* BOTONES*/
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-principal {
+    background: var(--color-primary);
+    color: white;
+}
+
+.btn-principal:hover {
+    background: var(--color-primary-hover);
+}
+
+
+/*lista de tareas
+*/
+
+.seccion-tareas {
+    margin-top: 35px;
+}
+
+.seccion-tareas h2 {
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+.lista-tareas {
+    display: grid;
+    gap: 14px;
+}
+
+.tarjeta-tarea {
+    background: var(--color-white);
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.informacion-tarea {
+    min-width: 0;
+}
+
+.informacion-tarea h3 {
+    font-size: 17px;
+    overflow-wrap: anywhere;
+}
+
+.informacion-tarea p {
+    margin-top: 7px;
+    color: var(--color-muted);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.detalles-tarea {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.etiqueta {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.prioridad-alta {
+    background: #ffe5e5;
+    color: #fd0202;
+}
+
+.prioridad-media {
+    background: #fff0d4;
+    color: #db6414;
+}
+
+.prioridad-baja {
+    background: #dff5e9;
+    color: #fade3f;
+}
+
+.estado-pendiente {
+    background: #eeedfa;
+    color: #6255bd;
+}
+
+.estado-completada {
+    background: #dcf4e8;
+    color: #24794d;
+}
+
+.tarea-completada h3 {
+    text-decoration: line-through;
+    color: var(--color-muted);
+}
+
+.mensaje-vacio {
+    text-align: center;
+    padding: 35px 15px;
+    color: var(--color-muted);
+    background: white;
+    border-radius: 12px;
+    border: 1px dashed var(--color-border);
+}
+
+
+/*RESPONSIVE*/
+
+@media (max-width: 650px) {
+
+    .contenedor {
+        width: 94%;
+        padding: 22px 0;
+    }
+
+    .encabezado h1 {
+        font-size: 23px;
+    }
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .tarjeta-estadistica {
+        padding: 16px;
+    }
+
+    .tarjeta-estadistica h2 {
+        font-size: 25px;
+    }
+
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-completo {
+        grid-column: auto;
+    }
+
+    .tarjeta-tarea {
+        align-items: flex-start;
+    }
+
+}
+
+/*botones*/
+
+.acciones-tarea {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btn-accion {
+    border: none;
+    border-radius: 7px;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-completar {
+    background: #dcf4e8;
+    color: #24794d;
+}
+
+.btn-completar:hover {
+    background: #c5ebd7;
+}
+
+.btn-editar {
+    background: #eeedfa;
+    color: #6255bd;
+}
+
+.btn-editar:hover {
+    background: #dedcf5;
+}
+
+.btn-eliminar {
+    background: #ffe5e5;
+    color: #c63d3d;
+}
+
+.btn-eliminar:hover {
+    background: #ffd0d0;
+}
+
+@media (max-width: 650px) {
+    .tarjeta-tarea {
+        flex-direction: column;
+    }
+
+    .acciones-tarea {
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+
+
+/* Barra de búsqueda y filtros */
+.filtros-tareas {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 15px;
+    background: var(--color-white);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+}
+
+.filtros-tareas .campo input,
+.filtros-tareas .campo select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    outline: none;
+    background: white;
+    color: var(--color-text);
+}
+
+.filtros-tareas .campo input:focus,
+.filtros-tareas .campo select:focus {
+    border-color: var(--color-primary);
+}
+
+@media (max-width: 650px) {
+    .filtros-tareas {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+}
+/* Mejoras visuales de las tarjetas */
+.tarjeta-tarea {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-tarea:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 36, 58, 0.07);
+}
+
+.informacion-tarea {
+    flex: 1;
+}
+
+.acciones-tarea {
+    flex-shrink: 0;
+}
+
+.btn-accion:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+}
